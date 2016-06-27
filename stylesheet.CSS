@@ -1,0 +1,32 @@
+html, body, header, main, h1, h2, p, ul, li {
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+body {
+  background-color: #DEB887;
+  color: #644643;
+  margin: 40px;
+}
+
+h1 {
+  text-align: center;
+  padding: 25px;
+  background-color: #8EA6A8;
+  border: 3px double #355658;
+}
+
+h2 {
+  padding: 30px 12px 12px 8px;
+}
+
+.claimList p {
+  color: #684966;
+  padding: 8px;
+}
+
+.claimList p:last-child {
+  font-size: 1.2em;
+  font-weight: bold;
+}
