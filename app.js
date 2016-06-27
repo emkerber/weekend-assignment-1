@@ -59,6 +59,9 @@ function percentageCovered(claim) {
   }
 };
 
+//initializes the string to be appended to the DOM
+var stringToAppend = "";
+
 //function to determine amount covered per visitCost value
 function amountCovered(array) {
   for (var i = 0; i < array.length; i++) {
@@ -66,11 +69,25 @@ function amountCovered(array) {
     cost = Math.round(cost); //rounds amount covered to the nearest whole number
     totalPayedOut += cost; //keeps track of total amount payed by company
     console.log("Paid out $" + cost + " for " + array[i].patientName + "\n"); //log amount paid out for patient in pretty print
+    stringToAppend += "<p>" + "Paid out $" + cost + " for " + array[i].patientName + "." + "</p>"; //to build the string that is to be appended to the DOM
   }
 };
 
 //call amountCovered function
 amountCovered(claimsList);
 
-//console.log entire amount paid out
+//to add pretty print to the variable's value
+totalPayedOut = "Total amount paid out: $" + totalPayedOut;
+
+//console.log entire amount paid out, in pretty print
 console.log(totalPayedOut);
+
+
+//Hard Mode: append to the DOM
+
+
+stringToAppend += "<p>" + totalPayedOut + "." + "</p>";
+
+$(document).ready(function(){
+  $(".claimList").append(stringToAppend);
+});
